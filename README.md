@@ -1,5 +1,7 @@
 # ptcgp-images
 
+> **Disclaimer:** The literal and graphical information presented in this repository about Pokémon Trading Card Game Pocket, including card images and text, is copyright The Pokémon Company, DeNA Co., Ltd., and/or Creatures, Inc. This repository is not produced by, endorsed by, supported by, or affiliated with any of those copyright holders.
+
 Card and UI images for Pokémon TCG Pocket.
 
 Image paths correspond directly to the path views in the companion data repository: [Vociferix/ptcgp-data](https://github.com/Vociferix/ptcgp-data). Every image in this repository has a matching row in one of those views, and the view values are the exact relative paths used here.
