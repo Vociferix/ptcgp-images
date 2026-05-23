@@ -31,8 +31,8 @@ packs/
     {SET}/
       {subtitle}.png      e.g. packs/logos/A1/charizard.png
 
-promo_sources/
-  {source}.png            e.g. promo_sources/wonder_pick.png
+card_sources/
+  {source}.png            e.g. card_sources/wonder_pick.png
 
 rarities/
   icons/
@@ -80,11 +80,11 @@ Examples:
 - `packs/logos/B1/mega_blaziken.png`
 - `packs/art/P-A/vol_1.png`
 
-### Promo sources
+### Card sources
 
-`promo_sources/{source}.png`
+`card_sources/{source}.png`
 
-`{source}` is the promo source code in lowercase with spaces replaced by underscores.
+`{source}` is the card source code in lowercase with spaces replaced by underscores.
 
 Examples: `wonder_pick.png`, `gold_shop.png`, `shop.png`, `mission.png`, `pack.png`
 
@@ -122,7 +122,7 @@ The [ptcgp-data](https://github.com/Vociferix/ptcgp-data) SQLite database expose
 | `rarity_symbols` | `rarity_id` | `rarities/symbols/{group_lower}/{count}.png` |
 | `element_icons` | `element_id` | `elements/icons/{element_lower}.png` |
 | `element_symbols` | `element_id` | `elements/symbols/{element_lower}.png` |
-| `promo_source_icons` | `promo_source_id` | `promo_sources/{source_lower}.png` |
+| `card_source_icons` | `card_source_id` | `card_sources/{source_lower}.png` |
 
 Example — get the image path for every card in set A1:
 
