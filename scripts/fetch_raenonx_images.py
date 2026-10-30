@@ -181,7 +181,10 @@ def download_card(
     force: bool,
 ) -> tuple[int, str]:
     """Returns (num, status) where status is one of: ok, skipped, error: ..."""
-    out_path = dest / f"{num:03d}.png"
+    if num < 0:
+        out_path = dest / f"{num:04d}.png"
+    else:
+        out_path = dest / f"{num:03d}.png"
     if out_path.exists() and not force:
         return num, "skipped"
 
@@ -280,7 +283,10 @@ def main() -> int:
 
         if args.dry_run:
             for num in sorted(cards):
-                print(f"  {num:03d}.png <- {cards[num]}")
+                if num < 0:
+                    print(f"  {num:04d}.png <- {cards[num]}")
+                else:
+                    print(f"  {num:03d}.png <- {cards[num]}")
             continue
 
         dest = args.output_dir / set_id
@@ -299,7 +305,10 @@ def main() -> int:
                 num, status = future.result()
                 results.append((num, status))
                 if status.startswith("error"):
-                    print(f"  {num:03d}.png {status}", file=sys.stderr)
+                    if num < 0:
+                        print(f"  {num:04d}.png {status}", file=sys.stderr)
+                    else:
+                        print(f"  {num:03d}.png {status}", file=sys.stderr)
                 print(
                     f"\r  {done}/{len(futures)}", end="", file=sys.stderr, flush=True
                 )
